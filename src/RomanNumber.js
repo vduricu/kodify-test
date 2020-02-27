@@ -13,7 +13,6 @@ class RomanNumber {
     this.#number = number;
 
     this._prerequisitesCheck();
-    this._doConversion();
   }
 
   toInt() {
@@ -31,28 +30,31 @@ class RomanNumber {
 
     if (this.#number === parseInt(this.#number)) {
       this.#intVersion = parseInt(this.#number);
-      this._testIsNumber();
+      this._convertFromInteger();
     } else {
       this.#stringVersion = this.#number.trim()
         .toUpperCase();
-      this._testIsString();
+      this._convertFromString();
     }
   }
 
-  _testIsNumber() {
+  _convertFromInteger() {
     if (this.#intVersion < 1 || this.#intVersion > 3999) {
       throw new Exceptions.InvalidRangeException();
     }
   }
 
-  _testIsString() {
+  _convertFromString() {
     if (this.#stringVersion === "") {
       throw new Exceptions.ValueRequiredException();
     }
-  }
 
-  _doConversion() {
+    const regexPattern = new RegExp("^(M{0,3})(D?)(C{0,3})(L?)(X{0,3})(V?)(I{0,3})$");
 
+    const match = this.#stringVersion.match(regexPattern);
+    if (!match) {
+      throw new Exceptions.InvalidValueException();
+    }
   }
 }
 
