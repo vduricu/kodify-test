@@ -1,0 +1,28 @@
+{
+  "name": "kodify-test",
+  "version": "1.0.0",
+  "description": "Roman Numerals Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha tests/**/*.test.js --exit --timeout 5000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vduricu/kodify-test.git"
+  },
+  "keywords": [
+    "roman",
+    "numerals",
+    "challenge"
+  ],
+  "author": "Valentin Duricu <valentin.duricu@spark-dev.ro>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vduricu/kodify-test/issues"
+  },
+  "homepage": "https://github.com/vduricu/kodify-test#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.0"
+  }
+}
