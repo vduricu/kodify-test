@@ -37,7 +37,7 @@ describe("Roman Number Challenge unit test", () => {
     expect((new RomanNumber(4)).toString()).to.equal("IV");
     expect((new RomanNumber(5)).toString()).to.equal("V");
     expect((new RomanNumber(1968)).toString()).to.equal("MCMLXVIII");
-    expect((new RomanNumber("1473")).toInt()).to.equal("MCDLXXIII");
+    expect((new RomanNumber("1473")).toString()).to.equal("MCDLXXIII");
     expect((new RomanNumber(2999)).toString()).to.equal("MMCMXCIX");
     expect((new RomanNumber(3000)).toString()).to.equal("MMM");
   });

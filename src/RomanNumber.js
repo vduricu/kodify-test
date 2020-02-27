@@ -43,9 +43,40 @@ class RomanNumber {
       throw new Exceptions.InvalidRangeException();
     }
 
-    const copy = this.#intVersion;
-    this.#stringVersion = "";
+    const mapping = {
+      1000: "M",
+      900: "CM",
+      500: "D",
+      400: "CD",
+      100: "C",
+      90: "XC",
+      50: "L",
+      40: "XL",
+      10: "X",
+      9: "IX",
+      5: "V",
+      4: "IV",
+      1: "I"
+    };
+
+    let copy = this.#intVersion;
+
+    this.#stringVersion = Object.keys(mapping)
+      .sort((a, b) => b - a)
+      .reduce(
+        (accum, item) => {
+          if (copy < item) {
+            return accum;
+          }
+          const times = parseInt(copy / item);
+          copy %= item;
+
+          return `${accum}${mapping[item].repeat(times)}`;
+        },
+        ""
+      );
   }
+
 
   _convertFromString() {
     if (this.#stringVersion === "") {
