@@ -11,8 +11,8 @@ describe("Roman Number Challenge unit test", () => {
     expect(() => new RomanNumber("")).to.throw("Value required");
   });
   it("Values outside interval should throw 'Invalid range'", () => {
-    expect(() => new RomanNumber(0)).to.throw("Value required");
-    expect(() => new RomanNumber(10000)).to.throw("Value required");
+    expect(() => new RomanNumber(0)).to.throw("Invalid range");
+    expect(() => new RomanNumber(10000)).to.throw("Invalid range");
   });
   it("Invalid values should throw 'Invalid value'", () => {
     expect(() => new RomanNumber("CD1X")).to.throw("Invalid value");
