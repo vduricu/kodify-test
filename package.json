@@ -4,7 +4,9 @@
   "description": "Roman Numerals Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha tests/**/*.test.js --exit --timeout 5000"
+    "test": "NODE_ENV=test mocha tests/**/*.test.js --exit --timeout 5000",
+    "lint": "eslint \"./**/*.js\"",
+    "lint:fix": "eslint --fix \"./**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,13 @@
   },
   "homepage": "https://github.com/vduricu/kodify-test#readme",
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-chai-expect": "^2.1.0",
+    "eslint-plugin-import": "^2.20.1",
     "mocha": "^7.1.0"
   }
 }

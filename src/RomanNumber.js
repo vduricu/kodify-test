@@ -2,19 +2,21 @@
 
 class RomanNumber {
     #intVersion = 0;
+
     #stringVersion = "";
+
     #number = "";
 
     constructor(number) {
-        this.#number = number;
+      this.#number = number;
     }
 
     toInt() {
-        return this.#intVersion;
+      return this.#intVersion;
     }
 
     toString() {
-        return this.#stringVersion;
+      return this.#stringVersion;
     }
 }
 
